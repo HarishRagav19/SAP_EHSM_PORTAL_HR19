@@ -1,0 +1,670 @@
+/* EHSM Portal - Premium Enterprise Theme */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+
+    --ehsm-primary: #7c3aed;
+    --ehsm-primary-light: #8b5cf6;
+    --ehsm-primary-dark: #5b21b6;
+    --ehsm-accent: #c4b5fd;
+
+    --ehsm-bg: #f4f7fb;
+    --ehsm-card-bg: #ffffff;
+
+    --ehsm-border: #e2e8f0;
+
+    --ehsm-text-primary: #1e293b;
+    --ehsm-text-secondary: #64748b;
+    --ehsm-text-tertiary: #94a3b8;
+
+    --ehsm-success: #10b981;
+    --ehsm-error: #ef4444;
+    --ehsm-warning: #f59e0b;
+    --ehsm-info: #3b82f6;
+
+    --ehsm-sidebar-bg: #ffffff;
+    --ehsm-header-bg: #ffffff;
+
+    --ehsm-shadow-sm:
+        0 2px 6px rgba(0,0,0,0.05);
+
+    --ehsm-shadow-md:
+        0 8px 20px rgba(0,0,0,0.08);
+
+    --ehsm-shadow-lg:
+        0 20px 40px rgba(0,0,0,0.12);
+}
+
+* {
+    font-family:
+        'Inter',
+        -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        Roboto,
+        sans-serif !important;
+}
+
+.sapUiIcon,
+.sapUiIcon::before,
+.sapMBtnIcon,
+.sapMBtnIcon::before,
+.sapUiIconMirrorInRTL {
+    font-family: "SAP-icons" !important;
+}
+
+.sapUiIcon,
+.sapMBtnIcon {
+    color: inherit !important;
+}
+
+/* ================================================= */
+/* LOGIN PAGE */
+/* ================================================= */
+
+.ehsmLoginPageNew {
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef2f7 0%,
+            #f8fafc 100%
+        ) !important;
+}
+
+.ehsmLoginPageNew .sapMPageEnableScrolling {
+    background: transparent !important;
+}
+
+/* MAIN WRAPPER */
+
+.ehsmLoginWrapper {
+    width: 100% !important;
+    height: 100vh !important;
+}
+
+/* LEFT PANEL */
+
+.ehsmLoginLeftPanel {
+
+    width: 42% !important;
+    min-width: 480px !important;
+
+    position: relative !important;
+    overflow: hidden !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            #7c3aed 0%,
+            #8b5cf6 100%
+        ) !important;
+}
+
+/* Decorative Abstract Shapes */
+
+.ehsmAbstractShapeOne {
+
+    position: absolute !important;
+
+    width: 480px !important;
+    height: 480px !important;
+
+    background:
+        rgba(255,255,255,0.18) !important;
+
+    transform: rotate(45deg) !important;
+
+    border-radius: 60px !important;
+
+    top: -180px !important;
+    left: -180px !important;
+}
+
+.ehsmAbstractShapeTwo {
+
+    position: absolute !important;
+
+    width: 360px !important;
+    height: 360px !important;
+
+    background:
+        rgba(255,255,255,0.1) !important;
+
+    transform: rotate(45deg) !important;
+
+    border-radius: 50px !important;
+
+    bottom: -120px !important;
+    left: -100px !important;
+}
+
+/* BRAND SECTION */
+
+.ehsmBrandContent {
+
+    position: relative !important;
+    z-index: 2 !important;
+
+    padding: 5rem !important;
+
+    max-width: 560px !important;
+}
+
+/* Shield Icon */
+
+.ehsmShieldIcon {
+    color: white !important;
+}
+
+/* Titles */
+
+.ehsmLoginMainTitle {
+
+    color: white !important;
+
+    font-size: 2.5rem !important;
+    font-weight: 800 !important;
+
+    letter-spacing: 1px !important;
+}
+
+.ehsmEnterpriseText {
+
+    color:
+        rgba(255,255,255,0.85) !important;
+
+    font-size: 1rem !important;
+
+    margin-top: 0.2rem !important;
+}
+
+/* HERO */
+
+.ehsmHeroTitle {
+
+    color: white !important;
+
+    font-size: 3.4rem !important;
+    font-weight: 800 !important;
+
+    line-height: 1.12 !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    word-break: break-word !important;
+    max-width: 100% !important;
+
+    margin-top: 2rem !important;
+}
+
+.ehsmHeroDescription {
+
+    color:
+        rgba(255,255,255,0.9) !important;
+
+    font-size: 1rem !important;
+
+    line-height: 1.9 !important;
+    max-width: 100% !important;
+
+    margin-top: 1.8rem !important;
+}
+
+/* Feature Cards */
+
+.ehsmFeatureCard {
+
+    background:
+        rgba(139,92,246,0.14) !important;
+
+    backdrop-filter: blur(12px) !important;
+
+    border:
+        1px solid rgba(139,92,246,0.22) !important;
+
+    border-radius: 20px !important;
+
+    padding: 1rem 1.2rem !important;
+
+    align-items: center !important;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease !important;
+}
+
+.ehsmFeatureCard:hover {
+
+    transform: translateY(-2px) !important;
+
+    background:
+        rgba(139,92,246,0.18) !important;
+}
+
+.ehsmFeatureCardIcon {
+
+    color: white !important;
+
+    font-size: 1.5rem !important;
+}
+
+.ehsmFeatureCardTitle {
+
+    color: white !important;
+
+    font-weight: 700 !important;
+
+    font-size: 0.95rem !important;
+}
+
+.ehsmFeatureCardText {
+
+    color:
+        rgba(255,255,255,0.8) !important;
+
+    font-size: 0.82rem !important;
+
+    margin-top: 0.2rem !important;
+}
+
+/* RIGHT PANEL */
+
+.ehsmLoginRightPanel {
+
+    width: 58% !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f6f4ff 0%,
+            #eef2ff 100%
+        ) !important;
+}
+
+/* GLASS LOGIN CARD */
+
+.ehsmLoginGlassCard {
+
+    max-width: 430px !important;
+    margin: 0 auto !important;
+    background:
+        rgba(255,255,255,0.82) !important;
+
+    border:
+        1px solid rgba(124,58,237,0.18) !important;
+
+    backdrop-filter: blur(16px) !important;
+
+    border:
+        1px solid rgba(255,255,255,0.35) !important;
+
+    border-radius: 32px !important;
+
+    padding: 3rem !important;
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,0.08) !important;
+}
+
+/* LOGIN LOGO */
+
+.ehsmLoginLogoBox {
+
+    width: 90px !important;
+    height: 90px !important;
+
+    border-radius: 24px !important;
+
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            #7c3aed,
+            #8b5cf6
+        ) !important;
+
+    margin-bottom: 1.4rem !important;
+
+    box-shadow:
+        0 12px 30px rgba(124,58,237,0.24) !important;
+}
+
+.ehsmLoginLogoIcon {
+    color: white !important;
+}
+
+/* LOGIN TITLES */
+
+.ehsmLoginFormTitle {
+
+    color: var(--ehsm-text-primary) !important;
+
+    font-size: 2.4rem !important;
+    font-weight: 800 !important;
+}
+
+.ehsmLoginFormSubtitle {
+
+    color: var(--ehsm-text-secondary) !important;
+
+    margin-top: 0.4rem !important;
+
+    font-size: 0.95rem !important;
+}
+
+/* FORM */
+
+.ehsmFormGroup {
+    margin-bottom: 1rem !important;
+}
+
+.ehsmFormLabel {
+
+    color: var(--ehsm-text-primary) !important;
+
+    font-weight: 600 !important;
+
+    margin-bottom: 0.4rem !important;
+}
+
+/* INPUTS */
+
+.ehsmFormInput .sapMInputBaseInner {
+
+    height: 3.4rem !important;
+
+    border-radius: 16px !important;
+
+    border:
+        1px solid #dbe4ee !important;
+
+    background: white !important;
+
+    padding-left: 1rem !important;
+
+    font-size: 0.95rem !important;
+
+    transition: all 0.25s ease !important;
+}
+
+/* REMOVE BLUE LINE COMPLETELY */
+
+.ehsmFormInput .sapMInputBaseInner:focus,
+.ehsmFormInput .sapMInputBaseInner:active,
+.ehsmFormInput .sapMInputBaseInner:focus-visible,
+.ehsmFormInput.sapMFocus .sapMInputBaseInner,
+.ehsmFormInput.sapMInputBaseFocused .sapMInputBaseInner {
+
+    outline: none !important;
+    box-shadow: none !important;
+    border: 1px solid #dbe4ee !important;
+}
+
+/* VERY IMPORTANT — REMOVE SAPUI5 BLUE FOCUS BORDER */
+
+.ehsmFormInput.sapMFocus .sapMInputBaseContentWrapper,
+.ehsmFormInput .sapMInputBaseContentWrapper:focus,
+.ehsmFormInput .sapMInputBaseContentWrapper:active,
+.ehsmFormInput .sapMInputBaseContentWrapper {
+
+    border: 1px solid #dbe4ee !important;
+    border-bottom: 1px solid #dbe4ee !important;
+
+    outline: none !important;
+
+    box-shadow: none !important;
+}
+
+/* REMOVE INNER BLUE LINE */
+
+.ehsmFormInput input {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* REMOVE SAP DEFAULT AFTER EFFECT */
+
+.sapMInputBaseContentWrapper::after,
+.sapMInputBaseContentWrapper::before {
+    display: none !important;
+    border: none !important;
+}
+
+/* PLACEHOLDER */
+
+.ehsmFormInput .sapMInputBaseInner::placeholder {
+    color: #94a3b8 !important;
+}
+
+/* CHECKBOX */
+
+.ehsmRememberText {
+
+    color: var(--ehsm-text-secondary) !important;
+
+    margin-left: 0.4rem !important;
+}
+
+/* LINK */
+
+.ehsmForgotLink {
+
+    color: #ff5c7a !important;
+
+    font-weight: 600 !important;
+}
+
+/* BUTTON */
+
+.ehsmLoginBtn {
+
+    height: 3.4rem !important;
+
+    border-radius: 18px !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            #7c3aed,
+            #6d28d9
+        ) !important;
+
+    color: white !important;
+    border: none !important;
+
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+
+    box-shadow:
+        0 12px 28px rgba(124,58,237,0.24) !important;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease !important;
+}
+
+.ehsmLoginBtn:hover {
+
+    transform: translateY(-2px) !important;
+
+    box-shadow:
+        0 16px 36px rgba(255,92,122,0.32) !important;
+}
+
+/* DEMO */
+
+.ehsmDemoInfo {
+
+    padding-top: 1rem !important;
+
+    border-top:
+        1px solid rgba(148,163,184,0.2) !important;
+}
+
+.ehsmDemoLabel {
+
+    color: var(--ehsm-text-secondary) !important;
+
+    font-size: 0.82rem !important;
+}
+
+.ehsmDemoText {
+
+    color: var(--ehsm-text-primary) !important;
+
+    font-weight: 600 !important;
+}
+
+/* FOOTER */
+
+.ehsmLoginFooter {
+
+    color: var(--ehsm-text-tertiary) !important;
+
+    font-size: 0.82rem !important;
+}
+
+/* ================================================= */
+/* HEADER */
+/* ================================================= */
+
+.ehsmToolHeader {
+    background: var(--ehsm-header-bg) !important;
+    border-bottom: 2px solid var(--ehsm-primary) !important;
+    box-shadow: var(--ehsm-shadow-md) !important;
+    padding: 0.5rem 1rem !important;
+}
+
+.ehsmHeaderBtn {
+    color: var(--ehsm-text-primary) !important;
+    min-width: 44px !important;
+    height: 44px !important;
+    border-radius: 8px !important;
+    transition: all 0.2s ease !important;
+}
+
+.ehsmHeaderBtn:hover {
+    background-color: rgba(255, 92, 122, 0.08) !important;
+}
+
+.ehsmHeaderBrand {
+    gap: 0.75rem !important;
+}
+
+.ehsmBrandTitle {
+    font-weight: 700 !important;
+    font-size: 1.25rem !important;
+    color: var(--ehsm-primary) !important;
+}
+
+/* ================================================= */
+/* SIDEBAR */
+/* ================================================= */
+
+.ehsmSideNav {
+    background: var(--ehsm-sidebar-bg) !important;
+    border-right: 1px solid var(--ehsm-border) !important;
+}
+
+.sapTntNavLI {
+    margin: 0.25rem 0.5rem !important;
+    border-radius: 8px !important;
+}
+
+.sapTntNavLI.sapTntNavLISelected {
+    border-left: 4px solid var(--ehsm-primary) !important;
+    background: rgba(255,92,122,0.08) !important;
+}
+
+/* ================================================= */
+/* KPI CARDS */
+/* ================================================= */
+
+.ehsmKpiCard {
+
+    background: var(--ehsm-card-bg) !important;
+
+    border:
+        1px solid var(--ehsm-border) !important;
+
+    border-radius: 20px !important;
+
+    padding: 1.5rem !important;
+
+    box-shadow: var(--ehsm-shadow-sm) !important;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease !important;
+}
+
+.ehsmKpiCard:hover {
+
+    transform: translateY(-4px) !important;
+
+    box-shadow: var(--ehsm-shadow-lg) !important;
+}
+
+.ehsmKpiValue {
+
+    font-size: 2.2rem !important;
+    font-weight: 800 !important;
+
+    color: var(--ehsm-text-primary) !important;
+}
+
+/* ================================================= */
+/* RESPONSIVE */
+/* ================================================= */
+
+@media (max-width: 1100px) {
+
+    .ehsmLoginWrapper {
+        flex-direction: column !important;
+    }
+
+    .ehsmLoginLeftPanel {
+
+        width: 100% !important;
+        min-width: unset !important;
+
+        height: 320px !important;
+    }
+
+    .ehsmLoginRightPanel {
+        width: 100% !important;
+        padding: 2rem !important;
+    }
+
+    .ehsmHeroTitle {
+        font-size: 2.2rem !important;
+    }
+
+    .ehsmBrandContent {
+        padding: 2rem !important;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .ehsmLoginGlassCard {
+
+        padding: 2rem !important;
+
+        border-radius: 24px !important;
+    }
+
+    .ehsmHeroTitle {
+        font-size: 1.8rem !important;
+    }
+
+    .ehsmLoginFormTitle {
+        font-size: 1.6rem !important;
+    }
+}

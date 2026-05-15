@@ -1,0 +1,384 @@
+<mvc:View
+    controllerName="ehsm.portal.controller.Dashboard"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:tnt="sap.tnt"
+    xmlns:core="sap.ui.core"
+>
+    <Page id="dashboardPage" showHeader="false">
+
+        <tnt:ToolPage id="toolPage">
+
+            <!-- ================================================= -->
+            <!-- HEADER -->
+            <!-- ================================================= -->
+
+            <tnt:header>
+
+                <tnt:ToolHeader
+                    id="toolHeader"
+                    class="ehsmToolHeader">
+
+                    <Button
+                        icon="sap-icon://menu2"
+                        type="Transparent"
+                        press="onSideNavButtonPress"
+                        class="ehsmHeaderBtn"/>
+
+                    <HBox
+                        alignItems="Center"
+                        class="ehsmHeaderBrand">
+
+                        <Title
+                            text="SAP EHSM Portal"
+                            level="H1"
+                            class="ehsmBrandTitle"/>
+
+                        <ObjectStatus
+                            text="Preview Data"
+                            state="Success"
+                            class="ehsmPreviewBadge"/>
+
+                    </HBox>
+
+                    <ToolbarSpacer/>
+
+                    <Text
+                        text="Last sync: {dash>/LastSync}"
+                        class="ehsmSyncText"/>
+
+                    <Button
+                        icon="sap-icon://bell"
+                        type="Transparent"
+                        class="ehsmHeaderBtn"/>
+
+                    <Button
+                        icon="sap-icon://settings"
+                        type="Transparent"
+                        class="ehsmHeaderBtn"/>
+
+                    <Avatar
+                        initials="{dash>/UserInitials}"
+                        displaySize="XS"
+                        press="onProfilePress"
+                        class="ehsmUserAvatar"/>
+
+                    <Text
+                        text="{dash>/UserName}"
+                        class="ehsmUserName"/>
+
+                </tnt:ToolHeader>
+
+            </tnt:header>
+
+            <!-- ================================================= -->
+            <!-- SIDEBAR -->
+            <!-- ================================================= -->
+
+            <tnt:sideContent>
+
+                <tnt:SideNavigation
+                    id="sideNav"
+                    selectedKey="dashboard"
+                    itemSelect="onItemSelect"
+                    class="ehsmSideNav">
+
+                    <tnt:item>
+
+                        <tnt:NavigationList>
+
+                            <tnt:NavigationListItem
+                                text="Dashboard"
+                                icon="sap-icon://home"
+                                key="dashboard"/>
+
+                            <tnt:NavigationListItem
+                                text="Incident Management"
+                                icon="sap-icon://warning"
+                                key="incidents"/>
+
+                            <tnt:NavigationListItem
+                                text="Risk Assessment"
+                                icon="sap-icon://trend-up"
+                                key="risks"/>
+
+                            <tnt:NavigationListItem
+                                text="Safety Actions"
+                                icon="sap-icon://task"
+                                key="safetyActions"/>
+
+                            <tnt:NavigationListItem
+                                text="Hazard Analysis"
+                                icon="sap-icon://alert"
+                                key="hazardAnalysis"/>
+
+                        </tnt:NavigationList>
+
+                    </tnt:item>
+
+                    <tnt:fixedItem>
+
+                        <tnt:NavigationList>
+
+                            <tnt:NavigationListItem
+                                text="Employee Profile"
+                                icon="sap-icon://employee"
+                                key="profile"/>
+
+                        </tnt:NavigationList>
+
+                    </tnt:fixedItem>
+
+                </tnt:SideNavigation>
+
+            </tnt:sideContent>
+
+            <!-- ================================================= -->
+            <!-- MAIN CONTENT -->
+            <!-- ================================================= -->
+
+            <tnt:mainContents>
+
+                <ScrollContainer
+                    vertical="true"
+                    horizontal="false"
+                    height="100%"
+                    class="ehsmMainContent">
+
+                    <VBox
+                        class="ehsmDashboardContainer sapUiMediumMargin">
+
+                        <!-- PAGE HEADER -->
+
+                        <VBox
+                            class="ehsmPageHeader sapUiSmallMarginBottom">
+
+                            <HBox
+                                justifyContent="SpaceBetween"
+                                alignItems="Center">
+
+                                <VBox>
+
+                                    <Title
+                                        text="Safety Dashboard"
+                                        level="H2"
+                                        class="ehsmDashboardTitle"/>
+
+                                    <Text
+                                        text="Enterprise overview for incidents, risks, and workplace safety"
+                                        class="ehsmDashboardSubtitle"/>
+
+                                </VBox>
+
+                                <Button
+                                    text="Refresh"
+                                    icon="sap-icon://refresh"
+                                    press="onRefresh"
+                                    class="ehsmRefreshBtn"
+                                    type="Emphasized"/>
+
+                            </HBox>
+
+                        </VBox>
+
+                        <!-- ================================================= -->
+                        <!-- KPI SECTION -->
+                        <!-- ================================================= -->
+
+                        <VBox class="ehsmKPISection">
+
+                            <Text
+                                text="Key Performance Indicators"
+                                class="ehsmSectionTitle sapUiMediumMarginBottom"/>
+
+                            <l:Grid
+                                containerQuery="true"
+                                defaultSpan="XL3 L6 M6 S12"
+                                class="ehsmKPIGrid">
+
+                                <!-- TOTAL INCIDENTS -->
+
+                                <VBox
+                                    class="ehsmKpiCard sapUiTinyMargin">
+
+                                    <HBox
+                                        alignItems="Center"
+                                        class="ehsmKpiHeaderWithIcon">
+
+                                        <Button
+                                            icon="sap-icon://warning2"
+                                            type="Transparent"
+                                            class="ehsmKpiIconBtn"/>
+
+                                        <VBox>
+
+                                            <Text
+                                                text="Total Incidents"
+                                                class="ehsmKpiLabel"/>
+
+                                            <Text
+                                                text="All plants"
+                                                class="ehsmKpiSubLabel"/>
+
+                                        </VBox>
+
+                                    </HBox>
+
+                                    <Text
+                                        text="{dash>/TotalIncidents}"
+                                        class="ehsmKpiValue"/>
+
+                                </VBox>
+
+                                <!-- OPEN INCIDENTS -->
+
+                                <VBox
+                                    class="ehsmKpiCard ehsmKpiCardCritical sapUiTinyMargin">
+
+                                    <HBox
+                                        alignItems="Center"
+                                        class="ehsmKpiHeaderWithIcon">
+
+                                        <Button
+                                            icon="sap-icon://alert"
+                                            type="Transparent"
+                                            class="ehsmKpiIconBtn ehsmKpiIconBtnError"/>
+
+                                        <VBox>
+
+                                            <Text
+                                                text="Open Incidents"
+                                                class="ehsmKpiLabel"/>
+
+                                            <Text
+                                                text="Needs action"
+                                                class="ehsmKpiSubLabel"/>
+
+                                        </VBox>
+
+                                    </HBox>
+
+                                    <Text
+                                        text="{dash>/OpenIncidents}"
+                                        class="ehsmKpiValue ehsmKpiValueCritical"/>
+
+                                </VBox>
+
+                                <!-- CLOSED INCIDENTS -->
+
+                                <VBox
+                                    class="ehsmKpiCard ehsmKpiCardSuccess sapUiTinyMargin">
+
+                                    <HBox
+                                        alignItems="Center"
+                                        class="ehsmKpiHeaderWithIcon">
+
+                                        <Button
+                                            icon="sap-icon://sys-enter-2"
+                                            type="Transparent"
+                                            class="ehsmKpiIconBtn ehsmKpiIconBtnSuccess"/>
+
+                                        <VBox>
+
+                                            <Text
+                                                text="Closed Incidents"
+                                                class="ehsmKpiLabel"/>
+
+                                            <Text
+                                                text="Resolved"
+                                                class="ehsmKpiSubLabel"/>
+
+                                        </VBox>
+
+                                    </HBox>
+
+                                    <Text
+                                        text="{dash>/ClosedIncidents}"
+                                        class="ehsmKpiValue ehsmKpiValueSuccess"/>
+
+                                </VBox>
+
+                                <!-- HIGH RISK -->
+
+                                <VBox
+                                    class="ehsmKpiCard ehsmKpiCardError sapUiTinyMargin">
+
+                                    <HBox
+                                        alignItems="Center"
+                                        class="ehsmKpiHeaderWithIcon">
+
+                                        <Button
+                                            icon="sap-icon://alert"
+                                            type="Transparent"
+                                            class="ehsmKpiIconBtn ehsmKpiIconBtnError"/>
+
+                                        <VBox>
+
+                                            <Text
+                                                text="High Risk"
+                                                class="ehsmKpiLabel"/>
+
+                                            <Text
+                                                text="Priority cases"
+                                                class="ehsmKpiSubLabel"/>
+
+                                        </VBox>
+
+                                    </HBox>
+
+                                    <Text
+                                        text="{dash>/HighPriority}"
+                                        class="ehsmKpiValue ehsmKpiValueError"/>
+
+                                </VBox>
+
+                                <!-- SAFETY ACTIONS -->
+
+                                <VBox
+                                    class="ehsmKpiCard sapUiTinyMargin">
+
+                                    <HBox
+                                        alignItems="Center"
+                                        class="ehsmKpiHeaderWithIcon">
+
+                                        <Button
+                                            icon="sap-icon://task"
+                                            type="Transparent"
+                                            class="ehsmKpiIconBtn"/>
+
+                                        <VBox>
+
+                                            <Text
+                                                text="Safety Actions"
+                                                class="ehsmKpiLabel"/>
+
+                                            <Text
+                                                text="Active tasks"
+                                                class="ehsmKpiSubLabel"/>
+
+                                        </VBox>
+
+                                    </HBox>
+
+                                    <Text
+                                        text="{dash>/SafetyActions}"
+                                        class="ehsmKpiValue"/>
+
+                                </VBox>
+
+                            </l:Grid>
+
+                        </VBox>
+
+                    </VBox>
+
+                </ScrollContainer>
+
+            </tnt:mainContents>
+
+        </tnt:ToolPage>
+
+    </Page>
+
+</mvc:View>

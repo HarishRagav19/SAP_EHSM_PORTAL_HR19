@@ -1,0 +1,285 @@
+<mvc:View
+    controllerName="ehsm.portal.controller.Login"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    class="ehsmLoginPageNew">
+
+    <Page
+        showHeader="false"
+        enableScrolling="false"
+        class="ehsmLoginPageNew">
+
+        <content>
+
+            <HBox
+                width="100%"
+                height="100%"
+                justifyContent="Center"
+                alignItems="Center"
+                class="ehsmLoginWrapper">
+
+                <!-- ================================================= -->
+                <!-- LEFT BRANDING PANEL -->
+                <!-- ================================================= -->
+
+                <VBox
+                    justifyContent="Center"
+                    alignItems="Start"
+                    height="100%"
+                    class="ehsmLoginLeftPanel">
+
+                    <!-- Abstract Shapes -->
+                    <VBox class="ehsmAbstractShapeOne"/>
+                    <VBox class="ehsmAbstractShapeTwo"/>
+
+                    <!-- Branding Content -->
+                    <VBox class="ehsmBrandContent">
+
+                        <!-- Logo + Brand -->
+                        <HBox
+                            alignItems="Center"
+                            class="sapUiMediumMarginBottom">
+
+                            <core:Icon
+                                src="sap-icon://shield"
+                                size="2.8rem"
+                                class="ehsmShieldIcon"/>
+
+                            <VBox class="sapUiSmallMarginBegin">
+
+                                <Title
+                                    text="EHSM"
+                                    level="H1"
+                                    class="ehsmLoginMainTitle"/>
+
+                                <Text
+                                    text="Enterprise Safety Portal"
+                                    class="ehsmEnterpriseText"/>
+
+                            </VBox>
+
+                        </HBox>
+
+                        <!-- Hero Heading -->
+                        <Title
+                            text="Intelligent Safety Management Platform"
+                            level="H1"
+                            class="ehsmHeroTitle"/>
+
+                        <!-- Description -->
+                        <Text
+                            text="Transform workplace safety operations with real-time incident tracking, predictive risk analysis, compliance automation, and enterprise-grade audit management."
+                            class="ehsmHeroDescription"/>
+
+                        <!-- Feature Cards -->
+                        <VBox class="sapUiLargeMarginTop">
+
+                            <!-- Card 1 -->
+                            <HBox
+                                class="ehsmFeatureCard sapUiSmallMarginBottom">
+
+                                <core:Icon
+                                    src="sap-icon://activity-individual"
+                                    class="ehsmFeatureCardIcon"/>
+
+                                <VBox class="sapUiTinyMarginBegin">
+
+                                    <Text
+                                        text="Incident Intelligence"
+                                        class="ehsmFeatureCardTitle"/>
+
+                                    <Text
+                                        text="Real-time workplace safety monitoring"
+                                        class="ehsmFeatureCardText"/>
+
+                                </VBox>
+
+                            </HBox>
+
+                            <!-- Card 2 -->
+                            <HBox
+                                class="ehsmFeatureCard sapUiSmallMarginBottom">
+
+                                <core:Icon
+                                    src="sap-icon://inspection"
+                                    class="ehsmFeatureCardIcon"/>
+
+                                <VBox class="sapUiTinyMarginBegin">
+
+                                    <Text
+                                        text="Compliance Automation"
+                                        class="ehsmFeatureCardTitle"/>
+
+                                    <Text
+                                        text="Smart audit and compliance workflows"
+                                        class="ehsmFeatureCardText"/>
+
+                                </VBox>
+
+                            </HBox>
+
+                            <!-- Card 3 -->
+                            <HBox class="ehsmFeatureCard">
+
+                                <core:Icon
+                                    src="sap-icon://alert"
+                                    class="ehsmFeatureCardIcon"/>
+
+                                <VBox class="sapUiTinyMarginBegin">
+
+                                    <Text
+                                        text="Risk Assessment"
+                                        class="ehsmFeatureCardTitle"/>
+
+                                    <Text
+                                        text="AI-powered hazard and risk analysis"
+                                        class="ehsmFeatureCardText"/>
+
+                                </VBox>
+
+                            </HBox>
+
+                        </VBox>
+
+                    </VBox>
+
+                </VBox>
+
+                <!-- ================================================= -->
+                <!-- RIGHT LOGIN PANEL -->
+                <!-- ================================================= -->
+
+                <VBox
+                    width="58%"
+                    height="100%"
+                    justifyContent="Center"
+                    alignItems="Center"
+                    class="ehsmLoginRightPanel">
+
+                    <!-- Glass Login Card -->
+                    <VBox
+                        width="100%"
+                        class="ehsmLoginGlassCard">
+
+                        <!-- Login Header -->
+                        <VBox
+                            alignItems="Center"
+                            class="sapUiMediumMarginBottom">
+
+                            <!-- Logo -->
+                            <VBox class="ehsmLoginLogoBox">
+
+                                <core:Icon
+                                    src="sap-icon://employee-pane"
+                                    size="2.5rem"
+                                    class="ehsmLoginLogoIcon"/>
+
+                            </VBox>
+
+                            <!-- Welcome -->
+                            <Title
+                                text="Welcome Back"
+                                level="H2"
+                                class="ehsmLoginFormTitle"/>
+
+                            <Text
+                                text="Secure access to EHSM enterprise workspace"
+                                class="ehsmLoginFormSubtitle"/>
+
+                        </VBox>
+
+                        <!-- ========================= -->
+                        <!-- FORM -->
+                        <!-- ========================= -->
+
+                        <!-- Employee ID -->
+                        <VBox class="ehsmFormGroup">
+
+                            <Label
+                                text="Employee ID"
+                                required="true"
+                                class="ehsmFormLabel"/>
+
+                            <Input
+                                id="empId"
+                                placeholder="Enter Employee ID"
+                                class="ehsmFormInput"/>
+
+                        </VBox>
+
+                        <!-- Password -->
+                        <VBox class="ehsmFormGroup">
+
+                            <Label
+                                text="Password"
+                                required="true"
+                                class="ehsmFormLabel"/>
+
+                            <Input
+                                id="password"
+                                type="Password"
+                                placeholder="Enter Password"
+                                class="ehsmFormInput"/>
+
+                        </VBox>
+
+                        <!-- Remember -->
+                        <HBox
+                            justifyContent="Start"
+                            alignItems="Center"
+                            class="sapUiSmallMarginTop">
+
+                            <CheckBox id="rememberMe"/>
+
+                            <Text
+                                text="Remember Me"
+                                class="ehsmRememberText"/>
+
+                        </HBox>
+
+                        <!-- Login Button -->
+                        <Button
+                            text="Access Portal"
+                            press="onLogin"
+                            width="100%"
+                            type="Emphasized"
+                            class="ehsmLoginBtn sapUiLargeMarginTop"/>
+
+                        <!-- Demo Credentials -->
+                        <VBox
+                            alignItems="Center"
+                            class="ehsmDemoInfo sapUiLargeMarginTop">
+
+                            <Text
+                                text="Demo Credentials"
+                                class="ehsmDemoLabel"/>
+
+                            <Text
+                                text="ID: K901929 | Password: password123"
+                                class="ehsmDemoText"/>
+
+                        </VBox>
+
+                        <!-- Footer -->
+                        <VBox
+                            alignItems="Center"
+                            class="sapUiMediumMarginTop">
+
+                            <Text
+                                text="© 2026 EHSM Portal. All rights reserved."
+                                class="ehsmLoginFooter"/>
+
+                        </VBox>
+
+                    </VBox>
+
+                </VBox>
+
+            </HBox>
+
+        </content>
+
+    </Page>
+
+</mvc:View>

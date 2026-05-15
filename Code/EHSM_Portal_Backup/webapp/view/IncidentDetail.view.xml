@@ -1,0 +1,67 @@
+<mvc:View
+    controllerName="ehsm.portal.controller.IncidentDetail"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:l="sap.ui.layout"
+>
+    <Page id="incidentDetailPage" showHeader="false">
+        <f:DynamicPage id="incidentDetailContent" showFooter="true">
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <Title text="Incident Details: {Qmnum}"/>
+                </f:heading>
+                <f:expandedContent>
+                    <Label text="{Qmtxt}"/>
+                </f:expandedContent>
+                <f:actions>
+                    <Button text="Edit" type="Emphasized"/>
+                    <Button text="Delete" type="Transparent"/>
+                </f:actions>
+                <f:navigationActions>
+                    <Button icon="sap-icon://full-screen" type="Transparent"/>
+                    <Button icon="sap-icon://decline" type="Transparent" press="onCloseDetail"/>
+                </f:navigationActions>
+            </f:DynamicPageTitle>
+        </f:title>
+        <f:header>
+            <f:DynamicPageHeader pinnable="true">
+                <l:HorizontalLayout allowWrapping="true">
+                    <VBox class="sapUiMediumMarginEnd">
+                        <Label text="Type"/>
+                        <Text text="{Qmart}"/>
+                    </VBox>
+                    <VBox class="sapUiMediumMarginEnd">
+                        <Label text="Reported Date"/>
+                        <Text text="{path: 'Qmdat', type: 'sap.ui.model.type.Date'}"/>
+                    </VBox>
+                    <VBox class="sapUiMediumMarginEnd">
+                        <Label text="Priority"/>
+                        <ObjectStatus text="{Priok}" state="{= ${Priok} === '1' ? 'Error' : 'None' }"/>
+                    </VBox>
+                    <VBox class="sapUiMediumMarginEnd">
+                        <Label text="Plant"/>
+                        <Text text="{Mswerk}"/>
+                    </VBox>
+                </l:HorizontalLayout>
+            </f:DynamicPageHeader>
+        </f:header>
+        <f:content>
+            <VBox>
+                <Panel headerText="Status Information" class="sapUiSmallMargin">
+                    <HBox alignItems="Center">
+                        <Label text="Current Status: " class="sapUiSmallMarginEnd"/>
+                        <ObjectStatus text="{Status}" state="Information"/>
+                    </HBox>
+                </Panel>
+                
+                <Panel headerText="Action Plan" class="sapUiSmallMargin">
+                    <List items="{/SAFETYACTIONSet}">
+                        <StandardListItem title="{Mntxt}" description="Action ID: {Manum}" icon="sap-icon://accept" info="{Status}"/>
+                    </List>
+                </Panel>
+            </VBox>
+        </f:content>
+    </f:DynamicPage>
+</mvc:View>

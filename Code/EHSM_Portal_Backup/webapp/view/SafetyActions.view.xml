@@ -1,0 +1,61 @@
+<mvc:View
+    controllerName="ehsm.portal.controller.SafetyActions"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:tnt="sap.tnt"
+>
+    <Page id="safetyActionsPage" showHeader="false">
+        <tnt:ToolPage id="safetyActionsToolPage">
+        <tnt:header>
+            <tnt:ToolHeader>
+                <Button icon="sap-icon://menu2" type="Transparent" press="onSideNavButtonPress"/>
+                <Title text="Safety Actions" class="sapUiSmallMarginBegin"/>
+                <ToolbarSpacer/>
+                <Button icon="sap-icon://log" type="Transparent" press="onLogout"/>
+            </tnt:ToolHeader>
+        </tnt:header>
+        
+        <tnt:sideContent>
+            <tnt:SideNavigation selectedKey="safetyActions" itemSelect="onItemSelect">
+                <tnt:item>
+                    <tnt:NavigationList>
+                        <tnt:NavigationListItem text="Dashboard" icon="sap-icon://view-lux" key="dashboard"/>
+                        <tnt:NavigationListItem text="Incident Management" icon="sap-icon://warning" key="incidents"/>
+                        <tnt:NavigationListItem text="Risk Assessment" icon="sap-icon://shield" key="risks"/>
+                        <tnt:NavigationListItem text="Safety Actions" icon="sap-icon://activity-assigned-to-goal" key="safetyActions"/>
+                    </tnt:NavigationList>
+                </tnt:item>
+            </tnt:SideNavigation>
+        </tnt:sideContent>
+
+        <tnt:mainContents>
+            <ScrollContainer vertical="true" horizontal="false" height="100%">
+                <VBox class="sapUiMediumMargin">
+                    <Table items="{/SAFETYACTIONSet}" headerText="Assigned Safety Tasks">
+                        <columns>
+                            <Column><Text text="Incident ID"/></Column>
+                            <Column><Text text="Action ID"/></Column>
+                            <Column><Text text="Description"/></Column>
+                            <Column><Text text="Created By"/></Column>
+                            <Column><Text text="Date"/></Column>
+                            <Column><Text text="Status"/></Column>
+                        </columns>
+                        <items>
+                            <ColumnListItem>
+                                <cells>
+                                    <Text text="{Qmnum}"/>
+                                    <Text text="{Manum}"/>
+                                    <Text text="{Mntxt}"/>
+                                    <Text text="{Ernam}"/>
+                                    <Text text="{Erdat}"/>
+                                    <ObjectStatus text="{Status}" state="{= ${Status} === 'COMPLETED' ? 'Success' : 'Warning' }"/>
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                </VBox>
+            </ScrollContainer>
+        </tnt:mainContents>
+    </tnt:ToolPage>
+    </Page>
+</mvc:View>

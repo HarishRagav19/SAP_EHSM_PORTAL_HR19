@@ -1,0 +1,32 @@
+1. login_data -> 
+    Postman -> http://azktlds5cp.kcloud.com:8000/sap/opu/odata/sap/ZHR19_EHSM_PROJECT_SRV/LOGINSet(Empid='K901444',Password='9629')
+
+2. Dashboard 
+   Postman -> http://azktlds5cp.kcloud.com:8000/sap/opu/odata/sap/ZHR19_EHSM_PROJECT_SRV/DASHBOARDSet
+
+3. Incident 
+    Postman -> http://azktlds5cp.kcloud.com:8000/sap/opu/odata/sap/ZHR19_EHSM_PROJECT_SRV/INCIDENTSet
+
+4. Audit Inspection
+    Postman -> http://azktlds5cp.kcloud.com:8000/sap/opu/odata/sap/ZHR19_EHSM_PROJECT_SRV/AUDITINSPECTIONSet
+
+5. Compliance 
+    Postman -> http://azktlds5cp.kcloud.com:8000/sap/opu/odata/sap/ZHR19_EHSM_PROJECT_SRV/COMPLIANCESet
+
+6. Employee Profile
+    Postman -> http://azktlds5cp.kcloud.com:8000/sap/opu/odata/sap/ZHR19_EHSM_PROJECT_SRV/EMPLOYEEPROFILESet
+
+7. Hazard Analysis
+    Postman -> http://azktlds5cp.kcloud.com:8000/sap/opu/odata/sap/ZHR19_EHSM_PROJECT_SRV/HAZARDANALYSISSet
+
+8. Incident History 
+    Postman -> http://azktlds5cp.kcloud.com:8000/sap/opu/odata/sap/ZHR19_EHSM_PROJECT_SRV/HAZARDANALYSISSet
+
+9. Notification Details
+    Postman -> http://azktlds5cp.kcloud.com:8000/sap/opu/odata/sap/ZHR19_EHSM_PROJECT_SRV/NOTIFICATIONDETAILSet
+
+10. Safety Action
+    Postman -> http://azktlds5cp.kcloud.com:8000/sap/opu/odata/sap/ZHR19_EHSM_PROJECT_SRV/SAFETYACTIONSet
+
+11. Risk Assessment
+    Postman -> http://azktlds5cp.kcloud.com:8000/sap/opu/odata/sap/ZHR19_EHSM_PROJECT_SRV/RISKASSESSMENTSet

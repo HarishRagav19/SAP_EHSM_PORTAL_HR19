@@ -1,0 +1,61 @@
+<mvc:View
+    controllerName="ehsm.portal.controller.IncidentHistory"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:tnt="sap.tnt"
+>
+    <Page id="incidentHistoryPage" showHeader="false">
+        <tnt:ToolPage id="historyToolPage">
+        <tnt:header>
+            <tnt:ToolHeader>
+                <Button icon="sap-icon://menu2" type="Transparent" press="onSideNavButtonPress"/>
+                <Title text="Incident History & Audit Trail" class="sapUiSmallMarginBegin"/>
+                <ToolbarSpacer/>
+                <Button icon="sap-icon://log" type="Transparent" press="onLogout"/>
+            </tnt:ToolHeader>
+        </tnt:header>
+        
+        <tnt:sideContent>
+            <tnt:SideNavigation selectedKey="incidentHistory" itemSelect="onItemSelect">
+                <tnt:item>
+                    <tnt:NavigationList>
+                        <tnt:NavigationListItem text="Dashboard" icon="sap-icon://view-lux" key="dashboard"/>
+                        <tnt:NavigationListItem text="Incident Management" icon="sap-icon://warning" key="incidents"/>
+                        <tnt:NavigationListItem text="Incident History" icon="sap-icon://history" key="incidentHistory"/>
+                        <tnt:NavigationListItem text="Employee Profile" icon="sap-icon://employee" key="profile"/>
+                    </tnt:NavigationList>
+                </tnt:item>
+            </tnt:SideNavigation>
+        </tnt:sideContent>
+
+        <tnt:mainContents>
+            <ScrollContainer vertical="true" horizontal="false" height="100%">
+                <VBox class="sapUiMediumMargin">
+                    <Table items="{/HAZARDANALYSISSet}" headerText="Audit Log of Changes">
+                        <columns>
+                            <Column><Text text="Object ID"/></Column>
+                            <Column><Text text="Change #"/></Column>
+                            <Column><Text text="Changed By"/></Column>
+                            <Column><Text text="Date"/></Column>
+                            <Column><Text text="Time"/></Column>
+                            <Column><Text text="T-Code"/></Column>
+                        </columns>
+                        <items>
+                            <ColumnListItem>
+                                <cells>
+                                    <Text text="{ObjectId}"/>
+                                    <Text text="{ChangeNumber}"/>
+                                    <Text text="{Username}"/>
+                                    <Text text="{ChangeDate}"/>
+                                    <Text text="{ChangeTime}"/>
+                                    <Text text="{TransactionCode}"/>
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                </VBox>
+            </ScrollContainer>
+        </tnt:mainContents>
+    </tnt:ToolPage>
+    </Page>
+</mvc:View>

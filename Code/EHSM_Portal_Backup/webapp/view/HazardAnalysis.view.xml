@@ -1,0 +1,59 @@
+<mvc:View
+    controllerName="ehsm.portal.controller.HazardAnalysis"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:tnt="sap.tnt"
+>
+    <Page id="hazardAnalysisPage" showHeader="false">
+        <tnt:ToolPage id="hazardToolPage">
+        <tnt:header>
+            <tnt:ToolHeader>
+                <Button icon="sap-icon://menu2" type="Transparent" press="onSideNavButtonPress"/>
+                <Title text="Hazard Analysis" class="sapUiSmallMarginBegin"/>
+                <ToolbarSpacer/>
+                <Button icon="sap-icon://log" type="Transparent" press="onLogout"/>
+            </tnt:ToolHeader>
+        </tnt:header>
+        
+        <tnt:sideContent>
+            <tnt:SideNavigation selectedKey="hazardAnalysis" itemSelect="onItemSelect">
+                <tnt:item>
+                    <tnt:NavigationList>
+                        <tnt:NavigationListItem text="Dashboard" icon="sap-icon://view-lux" key="dashboard"/>
+                        <tnt:NavigationListItem text="Incident Management" icon="sap-icon://warning" key="incidents"/>
+                        <tnt:NavigationListItem text="Hazard Analysis" icon="sap-icon://per-diem" key="hazardAnalysis"/>
+                        <tnt:NavigationListItem text="Employee Profile" icon="sap-icon://employee" key="profile"/>
+                    </tnt:NavigationList>
+                </tnt:item>
+            </tnt:SideNavigation>
+        </tnt:sideContent>
+
+        <tnt:mainContents>
+            <ScrollContainer vertical="true" horizontal="false" height="100%">
+                <VBox class="sapUiMediumMargin">
+                    <Table items="{/HAZARDANALYSISSet}" headerText="Structural Hazard Analysis">
+                        <columns>
+                            <Column><Text text="Damage Code"/></Column>
+                            <Column><Text text="Description"/></Column>
+                            <Column><Text text="Cause Code"/></Column>
+                            <Column><Text text="Hazard Level"/></Column>
+                            <Column><Text text="Status"/></Column>
+                        </columns>
+                        <items>
+                            <ColumnListItem>
+                                <cells>
+                                    <Text text="{DamageCode}"/>
+                                    <Text text="{DamageText}"/>
+                                    <Text text="{CauseCode}"/>
+                                    <ObjectStatus text="{HazardLevel}" state="{= ${HazardLevel} === 'HIGH' ? 'Error' : 'Warning' }"/>
+                                    <Text text="{Status}"/>
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                </VBox>
+            </ScrollContainer>
+        </tnt:mainContents>
+    </tnt:ToolPage>
+    </Page>
+</mvc:View>
